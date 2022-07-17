@@ -37,7 +37,7 @@ const nameInputHandler = event=>{
        onChange={nameInputHandler}
        value= {enteredName}
        />
-       {!nameInputIsInvalid&& <p className="error-text">Name must not be empty</p>}
+       {nameInputIsInvalid&& <p className="error-text">Name must not be empty</p>}
        </div>
       <div className="form-actions">
         <button>Submit</button>
