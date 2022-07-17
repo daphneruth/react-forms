@@ -1,7 +1,11 @@
 import { useRef,useState } from "react";
+
 const SimpleInput = (props) => {
-const [enteredName, setEnteredName] = useState('');
 const nameInputRef = useRef();
+const [enteredName, setEnteredName] = useState('');
+
+const [enteredNameIsVlaid, setEnteredNameIsValid]= useState(false);
+
 const nameInputHandler = event=>{
   setEnteredName(event.target.value);
 };
@@ -9,6 +13,7 @@ const nameInputHandler = event=>{
   event.preventDefault();
 
   if (enteredName.trim()== ''){
+    setEnteredNameIsValid(false);
     return;
   }
  
@@ -26,7 +31,7 @@ const nameInputHandler = event=>{
       <div className="form-actions">
         <button>Submit</button>
       </div>
-    </form>
+    </form> 
   );
 };
 
