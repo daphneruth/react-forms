@@ -18,11 +18,9 @@
 
       let formIsValid = false;
       
-        if(enteredNameIsValid){
+        if(enteredNameIsValid) {
           formIsValid = true;
-       
       
-        
       };
       const nameInputHandler = event=>{
         setEnteredName(event.target.value);
@@ -30,7 +28,7 @@
 
       const emailInputHandler = event=>{
         setEnteredEmail(event.target.value);
-
+      }
 
       const nameInputBlurHandler = event => {
          setEnteredNameTouched(true);
@@ -107,6 +105,6 @@
         );
         
         }
-      }
+      
       export default SimpleInput;
     
