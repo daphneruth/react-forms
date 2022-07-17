@@ -30,7 +30,8 @@
         }
       
       console.log(enteredName);
-      
+      setEnteredName('');
+      setEnteredNameTouched(false);
       
       
       };
