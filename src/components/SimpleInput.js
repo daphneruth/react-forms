@@ -16,7 +16,7 @@
         } else {
           setFormIsValid(false);
         }
-      },[]);
+      },[enteredNameIsValid]);
 
       const nameInputHandler = event=>{
         setEnteredName(event.target.value);
