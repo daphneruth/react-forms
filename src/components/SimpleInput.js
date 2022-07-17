@@ -13,7 +13,7 @@ const nameInputHandler = event=>{
  }
  console.log(enteredValue)
   return (
-    <form onSubmit={formSubmitHandler}>
+    <form onSubmit={formSubmissionHandler}>
       <div className='form-control'>
         <label htmlFor='name'>Your Name</label>
         <input ref={nameInputRef} type='text' id='name' onChange={nameInputHandler}/>
