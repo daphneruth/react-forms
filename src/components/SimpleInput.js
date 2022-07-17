@@ -10,8 +10,9 @@ const nameInputHandler = event=>{
  
  console.log(enteredName);
  const enteredValue =nameInputRef.current.value;
- }
+ 
  console.log(enteredValue)
+ };
   return (
     <form onSubmit={formSubmissionHandler}>
       <div className='form-control'>
