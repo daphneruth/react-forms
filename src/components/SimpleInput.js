@@ -9,7 +9,7 @@ const nameInputHandler = event=>{
   event.preventDefault();
  }
   return (
-    <form>
+    <form onSubmit={formSubmitHandler}>
       <div className='form-control'>
         <label htmlFor='name'>Your Name</label>
         <input type='text' id='name' onChange={nameInputHandler}/>
