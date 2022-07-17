@@ -8,6 +8,7 @@ const nameInputHandler = event=>{
  const formSubmissionHandler = event =>{
   event.preventDefault();
  }
+ console.log{enteredName};
   return (
     <form onSubmit={formSubmitHandler}>
       <div className='form-control'>
