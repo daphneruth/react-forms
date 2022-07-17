@@ -5,7 +5,9 @@ const [enteredName, setEnteredName] = useState('');
 const nameInputHandler = event=>{
   setEnteredName(event.target.value);
 };
-
+ const formSubmissionHandler = event =>{
+  event.preventDefault();
+ }
   return (
     <form>
       <div className='form-control'>
