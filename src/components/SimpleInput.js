@@ -10,12 +10,18 @@
 
       const nameInputHandler = event=>{
         setEnteredName(event.target.value);
+
+        if (enteredName.trim() !==''){
+          setEnteredNameIsValid(true);
+          
+        }
+      
       };
       const nameInputBlurHandler = event => {
          setEnteredNameTouched(true);
          if (enteredName.trim()===''){
           setEnteredNameIsValid(false);
-          return;
+          
         }
       
       }
