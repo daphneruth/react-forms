@@ -13,6 +13,7 @@ const nameInputHandler = event=>{
 };
  const formSubmissionHandler = event =>{
   event.preventDefault();
+  setEnteredNameTouched(true);
 
   if (enteredName.trim()===''){
     setEnteredNameIsValid(false);
@@ -25,7 +26,8 @@ const nameInputHandler = event=>{
  console.log(enteredValue)
  };
  const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
- const nameInputClasses = enteredNameIsValid ? 'form-control': 'form-control invalid'
+ const nameInputClasses = nameInputIsInvalid ? 'form-control invalid': 'form-control'
+
   return (
     <form onSubmit={formSubmissionHandler}>
       <div className={nameInputClasses}>
