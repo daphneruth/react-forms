@@ -22,6 +22,7 @@ const nameInputHandler = event=>{
  
  console.log(enteredValue)
  };
+ const nameInputClasses = enteredNameIsValid ? 'form-control': 'form-control invalid'
   return (
     <form onSubmit={formSubmissionHandler}>
       <div className='form-control'>
