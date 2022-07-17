@@ -1,7 +1,7 @@
 import { useRef,useState } from "react";
 const SimpleInput = (props) => {
+const [enteredName, setEnteredName] = useState('')
 
-  
   return (
     <form>
       <div className='form-control'>
