@@ -11,7 +11,11 @@
 
       useEffect(()=>
       {
-        
+        if(enteredNameIsValid){
+          setFormIsValid(true);
+        } else {
+          setFormIsValid(false);
+        }
       },[]);
 
       const nameInputHandler = event=>{
