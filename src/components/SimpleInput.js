@@ -63,6 +63,10 @@
       const nameInputClasses = nameInputIsInvalid 
         ? 'form-control invalid'
         : 'form-control';
+        
+        const emailInputClasses = enteredEmailIsInvalid
+        ? 'form-control invalid'
+        : 'form-control';
 
         return (
           <form onSubmit={formSubmissionHandler}>
