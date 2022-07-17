@@ -6,6 +6,8 @@
       const [enteredNameTouched, setEnteredNameTouched]= useState(false);
 
       const enteredNameIsValid = enteredName.trim() !='';
+      const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
+
       const nameInputHandler = event=>{
         setEnteredName(event.target.value);
 
@@ -16,24 +18,26 @@
         
         }
       
-      }
+      
 
       const formSubmissionHandler = event =>{
         event.preventDefault();
         setEnteredNameTouched(true);
 
-        if (enteredName.trim()===''){
-          setEnteredNameIsValid(false);
+        if (!enteredNameIsValid){
+          
           return;
         }
       
       console.log(enteredName);
       
       
-      console.log(enteredValue)
+      
       };
-      const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
-      const nameInputClasses = nameInputIsInvalid ? 'form-control invalid': 'form-control'
+      
+      const nameInputClasses = nameInputIsInvalid 
+        ? 'form-control invalid'
+        : 'form-control';
 
         return (
           <form onSubmit={formSubmissionHandler}>
@@ -54,7 +58,7 @@
             </div>
           </form> 
         );
-      };
-
+        
+        }
 
       export default SimpleInput;
