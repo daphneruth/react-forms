@@ -39,7 +39,7 @@
         const emailInputBlurHandler = event=>{
           setEnteredEmail(event.target.value);
   
-      
+        }
       
 
       const formSubmissionHandler = event =>{
@@ -107,6 +107,6 @@
         );
         
         }
-      }}
-
+      }
       export default SimpleInput;
+    
