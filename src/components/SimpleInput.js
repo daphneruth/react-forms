@@ -12,7 +12,7 @@ const nameInputHandler = event=>{
  const formSubmissionHandler = event =>{
   event.preventDefault();
 
-  if (enteredName.trim()== ''){
+  if (enteredName.trim()===''){
     setEnteredNameIsValid(false);
     return;
   }
