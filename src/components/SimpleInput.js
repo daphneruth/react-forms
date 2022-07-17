@@ -4,7 +4,7 @@
       
       const [enteredName, setEnteredName] = useState('');
       const [enteredNameTouched, setEnteredNameTouched]= useState(false);
-      const [enteredEmai, setEnteredEmail] = useState('');
+      const [enteredEmail, setEnteredEmail] = useState('');
       const [enteredEmaiTouched, setEnteredEmailTouched]= useState(false);
       
 
@@ -12,7 +12,7 @@
       const enteredNameIsValid = enteredName.trim() !=='';
       const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
 
-      const enteredEmailIsValid = enteredEmai.includes('@');
+      const enteredEmailIsValid = enteredEmail.includes('@');
 
       const enteredEmailIsInvalid= !enteredEmailIsValid && enteredEmaiTouched;
 
@@ -80,13 +80,14 @@
             onBlur= {nameInputBlurHandler}
             value= {enteredName}
             />
-            {nameInputIsInvalid&& <p className="error-text">Name must not be empty</p>}
+            {nameInputIsInvalid &&(
+               <p className="error-text">Name must not be empty</p>)}
             </div>
             <div className="form-actions">
               <button disabled={!formIsValid}> Submit</button>
             </div>
 
-            <div className={nameInputClasses}>
+            <div className={emailInputClasses}>
               <label htmlFor='email'>Your Email</label>
             <input
           
@@ -96,7 +97,8 @@
             onBlur= {emailInputBlurHandler}
             value= {enteredEmail}
             />
-            {nameInputIsInvalid&& <p className="error-text">Name must not be empty</p>}
+            {emailInputClasses && 
+            (<p className="error-text">please enter a valid email </p>)}
             </div>
             <div className="form-actions">
               <button disabled={!formIsValid}> Submit</button>
@@ -105,6 +107,6 @@
         );
         
         }
-      }
+      }}
 
       export default SimpleInput;
