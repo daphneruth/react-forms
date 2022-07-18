@@ -4,19 +4,21 @@
       const SimpleInput = (props) => {
       const {
         value:enteredName,
+        isValid:enteredNameIsValid,
         hasError:nameInputHasError,
         valueChangeHandler:nameChangeHandler,
         InputBlurHandler:nameBlurHandler,
-      } = useInput();
-      const [enteredName, setEnteredName] = useState('');
-      const [enteredNameTouched, setEnteredNameTouched]= useState(false);
+      } = useInput(value =>value.trim() !=='');
+
+     // const [enteredName, setEnteredName] = useState('');
+      //const [enteredNameTouched, setEnteredNameTouched]= useState(false);
       const [enteredEmail, setEnteredEmail] = useState('');
       const [enteredEmaiTouched, setEnteredEmailTouched]= useState(false);
       
 
       
-      const enteredNameIsValid = enteredName.trim() !=='';
-      const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
+      //const enteredNameIsValid = enteredName.trim() !=='';
+      //const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
 
       const enteredEmailIsValid = enteredEmail.includes('@');
 
@@ -24,22 +26,16 @@
 
       let formIsValid = false;
       
-        if(enteredNameIsValid) {
+        if(enteredNameIsValid  && enteredEmailIsInvalid) {
           formIsValid = true;
       
       };
-      const nameInputHandler = event=>{
-        setEnteredName(event.target.value);
-      };
-
+            
       const emailInputHandler = event=>{
         setEnteredEmail(event.target.value);
       }
 
-      const nameInputBlurHandler = event => {
-         setEnteredNameTouched(true);
-        
-        }
+     
         const emailInputBlurHandler = event=>{
           setEnteredEmail(event.target.value);
   
