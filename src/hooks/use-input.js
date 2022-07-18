@@ -19,7 +19,7 @@ const useInput = (validateValue)=>{
         setIsTouched(false);
     
      }
-     reset();
+     
       
       
       
@@ -29,6 +29,7 @@ return{
   hasError,
   valueChangeHandler,
   inputBlurHandler,
+  reset
 };
 }
 

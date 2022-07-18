@@ -9,7 +9,7 @@
         valueChangeHandler:nameChangedHandler,
         InputBlurHandler:nameBlurHandler,
         reset:resetNameInput,
-      } = useInput(value =>value.trim() !=='');
+      } = useInput((value) =>value.trim() !=='');
      
       const {
         value:enteredEmail,
@@ -18,7 +18,7 @@
         valueChangeHandler:emailChangedHandler,
         InputBlurHandler:emailBlurHandler,
         reset:resetEmailInput,
-      } = useInput((value) =>value).includes('@');
+      } = useInput((value) =>value.includes('@'));
 
 
      // const [enteredName, setEnteredName] = useState('');
