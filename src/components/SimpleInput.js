@@ -42,15 +42,7 @@
       
       };
             
-      const emailInputHandler = event=>{
-        setEnteredEmail(event.target.value);
-      }
-
-     
-        const emailInputBlurHandler = event=>{
-          setEnteredEmail(event.target.value);
-  
-        }
+      
       
 
       const formSubmissionHandler = event =>{
