@@ -10,10 +10,20 @@
         InputBlurHandler:nameBlurHandler,
         reset:resetNameInput,
       } = useInput(value =>value.trim() !=='');
+     
+      const {
+        value:enteredEmail,
+        isValid:enteredEmailIsValid,
+        hasError:emailInputHasError,
+        valueChangeHandler:emailChangedHandler,
+        InputBlurHandler:emailBlurHandler,
+        reset:resetemailInput,
+      } = useInput(value =>value).includes('@');
+
 
      // const [enteredName, setEnteredName] = useState('');
       //const [enteredNameTouched, setEnteredNameTouched]= useState(false);
-      const [enteredEmail, setEnteredEmail] = useState('');
+     // const [enteredEmail, setEnteredEmail] = useState('');
       const [enteredEmaiTouched, setEnteredEmailTouched]= useState(false);
       
 
@@ -21,7 +31,7 @@
       //const enteredNameIsValid = enteredName.trim() !=='';
       //const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
 
-      const enteredEmailIsValid = enteredEmail.includes('@');
+     // const enteredEmailIsValid = enteredEmail.includes('@');
 
       const enteredEmailIsInvalid= !enteredEmailIsValid && enteredEmaiTouched;
 
