@@ -6,7 +6,7 @@
         value:enteredName,
         isValid:enteredNameIsValid,
         hasError:nameInputHasError,
-        valueChangeHandler:nameChangeHandler,
+        valueChangeHandler:nameChangedHandler,
         InputBlurHandler:nameBlurHandler,
       } = useInput(value =>value.trim() !=='');
 
@@ -67,6 +67,13 @@
         const emailInputClasses = enteredEmailIsInvalid
         ? 'form-control invalid'
         : 'form-control';
+        
+        const reset =()=> {
+          setEnteredValue('');
+          setIsTouched(false);
+        }
+        
+        
 
         return (
           <form onSubmit={formSubmissionHandler}>
@@ -76,11 +83,11 @@
           
             type='text'
             id="name"
-            onChange={nameInputHandler}
-            onBlur= {nameInputBlurHandler}
+            onChange={nameChangedHandler}
+            onBlur= {nameBlurHandler}
             value= {enteredName}
             />
-            {nameInputIsInvalid &&(
+            {nameInputHasError &&(
                <p className="error-text">Name must not be empty</p>)}
             </div>
             <div className="form-actions">
