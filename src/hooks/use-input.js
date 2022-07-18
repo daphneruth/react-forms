@@ -10,12 +10,17 @@ const useInput = ()=>{
         setEnteredValue(event.target.value);
       };
 
-      const valueBlurHandler = event => {
+      const inputBlurHandler = event => {
         setIsTouched(true);
        
        }
       
-
+return{
+  value:enteredValue,
+  hasError,
+  valueChangeHandler,
+  inputBlurHandler,
+};
 }
 
 
