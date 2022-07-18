@@ -17,7 +17,7 @@
         hasError:emailInputHasError,
         valueChangeHandler:emailChangedHandler,
         InputBlurHandler:emailBlurHandler,
-        reset:resetemailInput,
+        reset:resetEmailInput,
       } = useInput((value) =>value).includes('@');
 
 
@@ -59,7 +59,7 @@
       //setEnteredNameTouched(false);
 
       resetNameInput();
-      resetemailInput();
+      resetEmailInput();
       };
       
       const nameInputClasses = nameInputHasError
@@ -69,12 +69,6 @@
         const emailInputClasses = emailInputHasError
         ? 'form-control invalid'
         : 'form-control';
-        
-        //const reset =()=> {
-          //setEnteredValue('');
-          //setIsTouched(false);
-          //reset();
-       // }
         
         
 
