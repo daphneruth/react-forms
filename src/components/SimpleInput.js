@@ -1,4 +1,4 @@
-      import {  useState } from "react";
+      
       import useInput from "../hooks/use-input";
 
       const SimpleInput = (props) => {
@@ -18,13 +18,13 @@
         valueChangeHandler:emailChangedHandler,
         InputBlurHandler:emailBlurHandler,
         reset:resetemailInput,
-      } = useInput(value =>value).includes('@');
+      } = useInput((value) =>value).includes('@');
 
 
      // const [enteredName, setEnteredName] = useState('');
       //const [enteredNameTouched, setEnteredNameTouched]= useState(false);
      // const [enteredEmail, setEnteredEmail] = useState('');
-      const [enteredEmaiTouched, setEnteredEmailTouched]= useState(false);
+      //const [enteredEmaiTouched, setEnteredEmailTouched]= useState(false);
       
 
       
@@ -33,11 +33,11 @@
 
      // const enteredEmailIsValid = enteredEmail.includes('@');
 
-      const enteredEmailIsInvalid= !enteredEmailIsValid && enteredEmaiTouched;
+      //const enteredEmailIsInvalid= !enteredEmailIsValid && enteredEmaiTouched;
 
       let formIsValid = false;
       
-        if(enteredNameIsValid  && enteredEmailIsInvalid) {
+        if(enteredNameIsValid  && enteredEmailIsValid) {
           formIsValid = true;
       
       };
@@ -47,37 +47,34 @@
 
       const formSubmissionHandler = event =>{
         event.preventDefault();
-        setEnteredNameTouched(true);
+        
 
         if (!enteredNameIsValid){
           
           return;
         }
       
-      //console.log(enteredName);
+      console.log(enteredName);
       //setEnteredName('');
       //setEnteredNameTouched(false);
 
       resetNameInput();
-      setEnteredEmail('');
-      setEnteredEmailTouched(false);
-      
-      
+      resetemailInput();
       };
       
       const nameInputClasses = nameInputHasError
         ? 'form-control invalid'
         : 'form-control';
         
-        const emailInputClasses = enteredEmailIsInvalid
+        const emailInputClasses = emailInputHasError
         ? 'form-control invalid'
         : 'form-control';
         
-        const reset =()=> {
-          setEnteredValue('');
-          setIsTouched(false);
-          reset
-        }
+        //const reset =()=> {
+          //setEnteredValue('');
+          //setIsTouched(false);
+          //reset();
+       // }
         
         
 
@@ -106,11 +103,11 @@
           
             type='email'
             id="email"
-            onChange={emailInputHandler}
-            onBlur= {emailInputBlurHandler}
+            onChange={emailChangedHandler}
+            onBlur= {emailBlurHandler}
             value= {enteredEmail}
             />
-            {emailInputClasses && 
+            {emailInputHasError && 
             (<p className="error-text">please enter a valid email </p>)}
             </div>
             <div className="form-actions">
