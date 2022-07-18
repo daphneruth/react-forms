@@ -8,6 +8,7 @@
         hasError:nameInputHasError,
         valueChangeHandler:nameChangedHandler,
         InputBlurHandler:nameBlurHandler,
+        reset:resetNameInput,
       } = useInput(value =>value.trim() !=='');
 
      // const [enteredName, setEnteredName] = useState('');
@@ -51,16 +52,18 @@
           return;
         }
       
-      console.log(enteredName);
-      setEnteredName('');
-      setEnteredNameTouched(false);
+      //console.log(enteredName);
+      //setEnteredName('');
+      //setEnteredNameTouched(false);
+
+      resetNameInput();
       setEnteredEmail('');
       setEnteredEmailTouched(false);
       
       
       };
       
-      const nameInputClasses = nameInputIsInvalid 
+      const nameInputClasses = nameInputHasError
         ? 'form-control invalid'
         : 'form-control';
         
@@ -71,6 +74,7 @@
         const reset =()=> {
           setEnteredValue('');
           setIsTouched(false);
+          reset
         }
         
         
